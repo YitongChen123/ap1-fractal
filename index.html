@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>AP1 Sierpinski 垫片</title>
+<style>
+canvas {border:1px solid black;}
+#panel {margin:10px 0;}
+</style>
+</head>
+<body>
+<div id="panel">
+  <div>
+    递归深度：<input type="range" id="depth" min="0" max="6" value="4">
+    <span id="depthVal">4</span>
+  </div>
+  <div>
+    点数量(混沌游戏)：<input type="range" id="pointCount" min="1000" max="20000" value="5000">
+    <span id="pcVal">5000</span>
+  </div>
+  <div>
+    点大小：<input type="range" id="pointSize" min="2" max="12" value="6">
+  </div>
+  <div>
+    渲染模式：
+    <select id="renderMode">
+      <option value="points">点云 POINTS</option>
+      <option value="lines">线框 LINES</option>
+      <option value="triangles">实体 TRIANGLES</option>
+    </select>
+  </div>
+  <div>
+    配色方案：
+    <select id="colorScheme">
+      <option value="0">方案1 白黑</option>
+      <option value="1">方案2 蓝紫</option>
+      <option value="2">方案3 绿橙</option>
+    </select>
+  </div>
+  <p>快捷键：1/2/3切换渲染模式；空格暂停生长动画；鼠标左键拖动平移；滚轮缩放</p>
+</div>
+<canvas id="glcanvas" width="600" height="600"></canvas>
+
+<script src="Common/webgl-utils.js"></script>
+<script src="Common/initShaders.js"></script>
+<script src="Common/MV.js"></script>
+
+<script src="fractal.js"></script>
+<script src="ui.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
